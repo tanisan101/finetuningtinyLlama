@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { ContactForm } from './components/ContactForm';
 import { NotificationSystem, useNotifications } from './components/NotificationSystem';
+import { PortfolioPreview } from './components/PortfolioPreview';
 import { trackPageView, trackResumeDownload, trackProjectView } from './services/analyticsService';
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
             <a href="#education" className="nav-link">Education</a>
             <a href="#experience" className="nav-link">Experience</a>
             <a href="#projects" className="nav-link">Projects</a>
+            <a href="#portfolio-preview" className="nav-link">Portfolio</a>
             <a href="#contact" className="nav-link">Contact</a>
           </div>
           <div className="hamburger">
@@ -71,7 +73,7 @@ function App() {
                 with attention to detail and love for minimalistic design.
               </p>
               <div className="hero-buttons">
-                <button className="btn-primary" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
+                <button className="btn-primary" onClick={() => document.getElementById('portfolio-preview')?.scrollIntoView({ behavior: 'smooth' })}>
                   <span>View My Work</span>
                   <div className="btn-shine"></div>
                 </button>
@@ -355,6 +357,11 @@ function App() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Portfolio Preview Section */}
+      <section id="portfolio-preview" className="bg-gray-50 py-16">
+        <PortfolioPreview />
       </section>
 
       {/* Contact Section */}
